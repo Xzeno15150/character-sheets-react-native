@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-init",
-    "slug": "expo-init",
+    "name": "Heroes of Transnya",
+    "slug": "heroes-of-transnya",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
