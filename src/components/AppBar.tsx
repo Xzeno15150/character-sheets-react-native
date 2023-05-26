@@ -2,7 +2,7 @@ import { Appbar, Menu } from 'react-native-paper';
 import { getHeaderTitle } from '@react-navigation/elements';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSignOut } from '../redux/slices/AuthSlice';
+import { setLoggedOut } from '../redux/actions/AuthActions';
 import { ParamListBase, Route } from '@react-navigation/native';
 import { NativeStackNavigationOptions, NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -20,7 +20,7 @@ export default function AppBar(props: AppBarProps) {
 
     const dispatch = useDispatch();
 
-    const handleLogout = () => dispatch(setSignOut());
+    const handleLogout = () => dispatch(setLoggedOut());
 
     return (
         <Appbar.Header>
