@@ -1,16 +1,18 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AppBar from "../components/AppBar";
-import HomeScreen from "../screens/HomeScreen";
 
-const Stack = createNativeStackNavigator();
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import CharacterList from "../screens/CharacterList";
+import PartyList from "../screens/PartyList";
+
+
+
+
+const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
     return (
-        <Stack.Navigator initialRouteName="Home"
-            screenOptions={{
-                header: (props) => <AppBar {...props} />,
-            }}>
-            <Stack.Screen name="Home" component={HomeScreen} />
-        </Stack.Navigator>
+        <Tab.Navigator>
+            <Tab.Screen name="Characters" component={CharacterList} />
+            <Tab.Screen name="Parties" component={PartyList} />
+        </Tab.Navigator>
     )
 }
