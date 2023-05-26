@@ -34,7 +34,7 @@ export default function LoginForm() {
                 mode="outlined" 
                 secureTextEntry={!passwordVisible} 
                 right={
-                    <TextInput.Icon icon="eye" onPress={() => setPasswordVisible(!passwordVisible)}/>
+                    <TextInput.Icon icon= {passwordVisible ? "eye-off" : "eye" } onPress={() => setPasswordVisible(!passwordVisible)}/>
                 }/>
             <Button onPress={handleLogin} 
                     style={styles.submitButton}
