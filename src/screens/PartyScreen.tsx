@@ -1,6 +1,6 @@
 import {View} from "react-native";
 
-export default function Party(){
+export default function PartyScreen(){
     return (
         <View>
             

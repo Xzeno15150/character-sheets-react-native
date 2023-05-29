@@ -1,6 +1,6 @@
 import {View} from "react-native";
 
-export default function Character(){
+export default function CharacterScreen(){
     return (
         <View>
             
