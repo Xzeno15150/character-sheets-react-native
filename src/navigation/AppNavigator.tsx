@@ -10,8 +10,8 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
     return (
         <Tab.Navigator screenOptions={{headerShown : false}}>
-            <Tab.Screen name="Characters" component={CharacterNavigator} />
-            <Tab.Screen name="Parties" component={PartyNavigator} />
+            <Tab.Screen name="CharactersNavigator" component={CharacterNavigator} />
+            <Tab.Screen name="PartiesNavigator" component={PartyNavigator} />
         </Tab.Navigator>
     )
 }
