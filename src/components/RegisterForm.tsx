@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Button,TextInput, useTheme } from "react-native-paper";
+import { Button,TextInput } from "react-native-paper";
 import { useDispatch } from 'react-redux'
-import { setSignIn } from "../redux/slices/AuthSlice";
+import { setLoggedIn } from "../redux/actions/AuthActions";
 
 export default function RegisterForm() {
     
@@ -18,7 +18,7 @@ export default function RegisterForm() {
             isLoggedIn : true,
             userName : username
         };
-        dispatch(setSignIn(user));
+        dispatch(setLoggedIn(user));
     }
 
     return (

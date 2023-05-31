@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import PartyList from "../screens/PartyList";
-import Party from "../screens/Party";
+import Party from "../screens/PartyScreen";
 
 
 const Stack = createNativeStackNavigator();
