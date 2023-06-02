@@ -1,5 +1,7 @@
-export const selectIsLoggedIn = (state : any) => state.userAuth.isLoggedIn;
-export const selectUser = (state: any) => {
+// @ts-ignore
+export const selectIsLoggedIn = (state) => state.userAuth.isLoggedIn;
+// @ts-ignore
+export const selectUser = (state) => {
     return { 
         username : state.userAuth.userName,
         email: state.userAuth.email

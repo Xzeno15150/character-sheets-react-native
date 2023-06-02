@@ -1,1 +1,2 @@
-export const selectParties = (state : any) => state.partyReducer.parties;
+// @ts-ignore
+export const selectParties = (state) => state.partyReducer.parties;

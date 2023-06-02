@@ -1,5 +1,5 @@
 import { Party } from "../model/Party";
-import { CharacterElement } from "../model/enums/CharacterElement";
+import CharacterElement from "../model/enums/CharacterElement";
 
 export const PARTIES_LIST : Party[]= [
     {

@@ -1,4 +1,4 @@
-import { CharacterElement } from "../model/enums/CharacterElement";
+import CharacterElement from "../model/enums/CharacterElement";
 
 // TODO Change any to Element type
 export function mapElementToIconName(element : CharacterElement) {

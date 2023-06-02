@@ -1,5 +1,5 @@
 import { UserPartial } from "./UserPartial";
-import { CharacterElement } from "./enums/CharacterElement";
+import CharacterElement from "./enums/CharacterElement";
 
 export type CharacterPartial = {
     id: string,

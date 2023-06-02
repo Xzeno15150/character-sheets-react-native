@@ -1,9 +1,10 @@
 import { StyleSheet, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
 import UsernameText from "./UsernameText";
+import { Party } from "../model/Party";
 
 type PartyListItemTitleProps = {
-    party: any
+    party: Party
 };
 
 export default function PartyListItemTitle(props : PartyListItemTitleProps) {
