@@ -7,8 +7,8 @@ import { setLoggedIn } from "../redux/actions/AuthActions";
 export default function RegisterForm() {
     
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setUsername] = useState("");
+    const [password, setEmail] = useState("");
     const [confirmedPassword, setConfirmedPassword] = useState("");
 
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export default function RegisterForm() {
     const handleRegister = () => {
         const user = {
             isLoggedIn : true,
-            userName : username
+            email : email
         };
         dispatch(setLoggedIn(user));
     }
@@ -24,11 +24,11 @@ export default function RegisterForm() {
     return (
         <View style={styles.container}>
             <TextInput onChangeText={setUsername}
-                value={username}
+                value={email}
                 style={styles.textInput} 
-                label="Username" 
+                label="Email" 
                 mode="outlined"/>
-            <TextInput onChangeText={setPassword}
+            <TextInput onChangeText={setEmail}
                 value={password}
                 style={styles.textInput} 
                 label="Password" 

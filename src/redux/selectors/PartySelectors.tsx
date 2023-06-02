@@ -1,0 +1,1 @@
+export const selectParties = (state : any) => state.parties.parties;

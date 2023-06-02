@@ -7,7 +7,6 @@ import AuthNavigator from "./AuthNavigator";
 
 export default function AppRoute() {
     const isLoggedIn = useSelector(selectIsLoggedIn);
-    console.log(isLoggedIn);
     return (
         <NavigationContainer>
             {isLoggedIn ? <AppNavigator/> : <AuthNavigator/>}
