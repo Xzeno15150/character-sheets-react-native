@@ -13,3 +13,4 @@ node_modules/
 .idea
 # macOS
 .DS_Store
+.env

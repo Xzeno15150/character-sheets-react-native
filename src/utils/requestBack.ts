@@ -1,6 +1,7 @@
 import HTTPMethod from "./HTTTPMethod";
+import { getItem } from "./asyncStorageAcess";
 
-export function getRequest(url : string, method : HTTPMethod, body : JSON, headers : Headers) {
+export function createRequest(url: string, method: HTTPMethod, body: JSON, headers: Headers): Request {
     headers.append('Content-Type', 'application/json')
 
     return new Request(process.env.BACK_URL + url, {
@@ -8,4 +9,18 @@ export function getRequest(url : string, method : HTTPMethod, body : JSON, heade
         method: method,
         body: JSON.stringify(body)
     })
+}
+
+export default function createRequestWithStoredJWT(url: string, method: HTTPMethod, body: JSON): Request | undefined {
+    // @ts-ignore
+    let request = undefined;
+
+    getItem("jwt")
+        .then((value: string) => new Headers({ Authorization: "Bearer " + value }))
+        .then((headers: Headers) => {
+            request = createRequest(url, method, body, headers)
+        })
+        .catch(error => console.log("An error occured while requesting jwt token", error))
+
+    return request;
 }
