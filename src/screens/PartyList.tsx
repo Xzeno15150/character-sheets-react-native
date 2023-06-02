@@ -12,7 +12,6 @@ import { selectUser } from "../redux/selectors/AuthSelectors";
 export default function PartyList(){
     const parties : Party[] = useSelector(selectParties);
     const user : UserPartial = useSelector(selectUser);
-    console.log(parties)
 
     const dispatch = useDispatch();
     useEffect(() => {

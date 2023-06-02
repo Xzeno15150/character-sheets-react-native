@@ -5,6 +5,6 @@ import partyReducer from './reducers/PartyReducer';
 export const store = configureStore({
     reducer: {
         userAuth: authReducer,
-        parties: partyReducer,
+        partyReducer: partyReducer,
     },
 })

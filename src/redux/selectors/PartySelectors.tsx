@@ -1,1 +1,1 @@
-export const selectParties = (state : any) => state.parties.parties;
+export const selectParties = (state : any) => state.partyReducer.parties;
