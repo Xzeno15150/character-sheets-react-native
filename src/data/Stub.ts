@@ -1,3 +1,5 @@
+import { ImagePickerIOS } from "react-native";
+import { Character } from "../model/Character";
 import { Party } from "../model/Party";
 import CharacterElement from "../model/enums/CharacterElement";
 
@@ -62,4 +64,49 @@ export const PARTIES_LIST : Party[]= [
             },
         ],
     },
+]
+
+export const CHARACTERS_LIST : Character[] = [
+    {
+        id : "1231316800218895",
+        name : "Gudruc",
+        element : CharacterElement.WOOD,
+        level: 7,
+        user : {
+            email : "taefub@qfoufq.fr",
+            username : "OBQFOIUQSFSo",
+        },
+        imagePath : "",
+        healthPoint : {
+            current : 9,
+            max : 10
+        },
+        items : [],
+        skills : [],
+        party : {
+            id : "",
+            name : ""
+        }
+    },
+    {
+        id : "1236316800218895",
+        name : "Alex Zabel",
+        element : CharacterElement.FIRE,
+        level: 1,
+        user : {
+            email : "taefub@qfoufq.fr",
+            username : "OBQFOIUQSFSo",
+        },
+        imagePath : "",
+        healthPoint : {
+            current : 9,
+            max : 10
+        },
+        items : [],
+        skills : [],
+        party : {
+            id : "",
+            name : ""
+        }
+    }
 ]
