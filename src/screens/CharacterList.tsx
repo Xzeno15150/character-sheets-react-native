@@ -4,6 +4,7 @@ import { UserPartial } from "../model/UserPartial";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/selectors/AuthSelectors";
 import { selectCharacters } from "../redux/selectors/CharacterSelectors";
+import CharacterItem from "../components/CharacterItem";
 
 export default function CharacterList(){
     const characters : Character[] = useSelector(selectCharacters);
@@ -11,7 +12,7 @@ export default function CharacterList(){
 
     return (
         <List.Section>
-            {characters ? characters.map((character : any) => <PartyListItem key={character.id} character={character}/>) : undefined}
+            {characters ? characters.map((character : any) => <CharacterItem key={character.id} character={character}/>) : undefined}
         </List.Section>
     )
 }

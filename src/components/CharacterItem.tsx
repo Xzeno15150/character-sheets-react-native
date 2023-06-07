@@ -1,20 +1,20 @@
 import { List, useTheme } from "react-native-paper"
-import CharacterInPartyItemTitle from "./CharacterInPartyItemTitle"
+import CharacterItemTitle from "./CharacterItemTitle"
 import UsernameText from "./UsernameText"
 import { CharacterPartial } from "../model/CharacterPartial"
 import { Image, StyleSheet } from "react-native"
 
-type CharacterInPartyItemProps = {
+type CharacterItemProps = {
     character : CharacterPartial,
 }
 
-export default function CharacterInPartyItem(props : CharacterInPartyItemProps) {
+export default function CharacterItem(props : CharacterItemProps) {
     const character = props.character;
     const { colors } = useTheme();
     const styles = makeStyle(colors);
     return (
         <List.Item key={character.id} 
-                    title={<CharacterInPartyItemTitle {...props}/>}
+                    title={<CharacterItemTitle {...props}/>}
                     description={<UsernameText username={character.user.username}/>}
                     style={styles.item}
                     left={()=><Image style={styles.image} source={require("../../assets/default-character.png")}/>}/>
