@@ -1,3 +1,4 @@
+import { UserPartial } from "../../model/UserPartial";
 import { SET_SIGN_IN, SET_SIGN_OUT } from "../constants";
 
 export function setLoggedIn(user : UserPartial) {
