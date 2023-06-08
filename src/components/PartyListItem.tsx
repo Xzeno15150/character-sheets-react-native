@@ -1,6 +1,6 @@
 import { List, useTheme } from "react-native-paper";
 import PartyListItemTitle from "./PartyListItemTitle";
-import CharacterInPartyItem from "./CharacterInPartyItem";
+import CharacterItem from "./CharacterItem";
 import { useState } from "react";
 import { Party } from "../model/Party";
 import { CharacterPartial } from "../model/CharacterPartial";
@@ -22,7 +22,7 @@ export default function PartyListItem (props : PartyListItemProps) {
                         onPress={() => setExpanded(!expanded)}
                         style={styles.accordion}
                         >
-            {party.characters.map((character : CharacterPartial) => <CharacterInPartyItem character={character}/>)}
+            {party.characters.map((character : CharacterPartial) => <CharacterItem character={character}/>)}
         </List.Accordion>
     )
 }

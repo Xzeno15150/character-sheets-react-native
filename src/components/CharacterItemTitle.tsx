@@ -4,11 +4,11 @@ import { mapElementToIconName } from "../utils/ElementIconMapper";
 import Icon from 'react-native-paper/src/components/Icon'
 import { CharacterPartial } from "../model/CharacterPartial";
 
-type CharacterInPartyItemTitleProps = {
+type CharacterItemTitleProps = {
     character : CharacterPartial
 }
 
-export default function CharacterInPartyItemTitle(props : CharacterInPartyItemTitleProps) {
+export default function CharacterItemTitle(props : CharacterItemTitleProps) {
     const character = props.character;
     const { colors } = useTheme();
     const styles = makeStyles(colors);
