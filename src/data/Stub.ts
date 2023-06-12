@@ -70,6 +70,11 @@ export const CHARACTERS_LIST : Character[] = [
     {
         id : "1231316800218895",
         name : "Gudruc",
+        stats: {
+            body : 70,
+            mind : 45,
+            charisma : 55
+        },
         element : CharacterElement.WOOD,
         level: 7,
         user : {
@@ -91,6 +96,11 @@ export const CHARACTERS_LIST : Character[] = [
     {
         id : "1236316800218895",
         name : "Alex Zabel",
+        stats: {
+            body : 70,
+            mind : 30,
+            charisma : 70
+        },
         element : CharacterElement.FIRE,
         level: 1,
         user : {
