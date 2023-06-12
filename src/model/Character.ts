@@ -1,7 +1,12 @@
+import { Stats } from "./Stats";
+import CharacterElement from "./enums/CharacterElement";
+
 export type Character = {
     id: String;
     name: String;
-    element: String;
+    stats: Stats;
+    element: CharacterElement;
+    level: number;
     imagePath: String;
     healthPoint: HealthPoint;
     skills: SkillPartial[];

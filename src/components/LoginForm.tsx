@@ -7,7 +7,7 @@ import { setLoggedIn } from "../redux/actions/AuthActions";
 export default function LoginForm() {
     
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
@@ -15,17 +15,17 @@ export default function LoginForm() {
     const handleLogin = () => {
         const user = {
             isLoggedIn : true,
-            userName : username
+            email : email
         };
         dispatch(setLoggedIn(user));
     }
 
     return (
         <View style={styles.container}>
-            <TextInput onChangeText={setUsername}
-                value={username}
+            <TextInput onChangeText={setEmail}
+                value={email}
                 style={styles.textInput} 
-                label="Username" 
+                label="Email" 
                 mode="outlined"/>
             <TextInput onChangeText={setPassword}
                 value={password}
@@ -34,7 +34,7 @@ export default function LoginForm() {
                 mode="outlined" 
                 secureTextEntry={!passwordVisible} 
                 right={
-                    <TextInput.Icon icon="eye" onPress={() => setPasswordVisible(!passwordVisible)}/>
+                    <TextInput.Icon icon= {passwordVisible ? "eye-off" : "eye" } onPress={() => setPasswordVisible(!passwordVisible)}/>
                 }/>
             <Button onPress={handleLogin} 
                     style={styles.submitButton}
