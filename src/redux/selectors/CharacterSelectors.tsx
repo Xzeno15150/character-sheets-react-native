@@ -1,2 +1,1 @@
-// @ts-ignore
-export const selectCharacters = (state) => state.characterReducer.characters;
+export const selectCharacters = (state : any) => state.characterReducer.characters;

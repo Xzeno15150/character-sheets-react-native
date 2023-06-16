@@ -17,6 +17,7 @@ export default function LoginForm() {
             isLoggedIn : true,
             email : email
         };
+        //@ts-ignore
         dispatch(setLoggedIn(user));
     }
 

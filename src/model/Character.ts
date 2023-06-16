@@ -1,5 +1,6 @@
 import { Stats } from "./Stats";
 import CharacterElement from "./enums/CharacterElement";
+import {UserPartial} from "./UserPartial";
 
 export type Character = {
     id: String;
@@ -12,4 +13,5 @@ export type Character = {
     skills: SkillPartial[];
     items: ItemPartial[];
     party: PartyPartial;
+    user: UserPartial;
 }

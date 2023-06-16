@@ -1,15 +1,14 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import Character from "../screens/CharacterScreen";
 import PartyList from "../screens/PartyList";
-import Party from "../screens/PartyScreen";
-
 
 const Stack = createNativeStackNavigator();
 
 export default function PartyNavigator() {
-    return(
+    return (
         <Stack.Navigator initialRouteName="Parties">
-            <Stack.Screen name="Parties" component={PartyList} />
-            <Stack.Screen name="Party" component={Party}/>
+            <Stack.Screen options={{title: "Parties"}} name="PartyList" component={PartyList} />
+            <Stack.Screen options={{title: "Character"}} name="CharacterDetail" component={Character}/>
         </Stack.Navigator>
     )
 }

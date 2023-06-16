@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Button,TextInput } from "react-native-paper";
+import { Button,TextInput, useTheme } from "react-native-paper";
 import { useDispatch } from 'react-redux'
-import { setLoggedIn } from "../redux/actions/AuthActions";
+import {setLoggedIn} from "../redux/actions/AuthActions";
 
 export default function RegisterForm() {
     
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmedPassword, setConfirmedPassword] = useState("");
 
@@ -16,17 +16,18 @@ export default function RegisterForm() {
     const handleRegister = () => {
         const user = {
             isLoggedIn : true,
-            email : email
+            userName : username
         };
+        //@ts-ignore
         dispatch(setLoggedIn(user));
     }
 
     return (
         <View style={styles.container}>
-            <TextInput onChangeText={setEmail}
-                value={email}
+            <TextInput onChangeText={setUsername}
+                value={username}
                 style={styles.textInput} 
-                label="Email" 
+                label="Username" 
                 mode="outlined"/>
             <TextInput onChangeText={setPassword}
                 value={password}
