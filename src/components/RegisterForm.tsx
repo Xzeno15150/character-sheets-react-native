@@ -16,7 +16,7 @@ export default function RegisterForm() {
     const handleRegister = () => {
         const user = {
             isLoggedIn : true,
-            userName : email
+            email : email
         };
         //@ts-ignore
         dispatch(setLoggedIn(user));
@@ -27,7 +27,7 @@ export default function RegisterForm() {
             <TextInput onChangeText={setEmail}
                 value={email}
                 style={styles.textInput} 
-                label="Username" 
+                label="Email"
                 mode="outlined"/>
             <TextInput onChangeText={setPassword}
                 value={password}
