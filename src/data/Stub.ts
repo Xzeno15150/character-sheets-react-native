@@ -1,4 +1,3 @@
-import { ImagePickerIOS } from "react-native";
 import { Character } from "../model/Character";
 import { Party } from "../model/Party";
 import CharacterElement from "../model/enums/CharacterElement";
@@ -70,6 +69,11 @@ export const CHARACTERS_LIST : Character[] = [
     {
         id : "1231316800218895",
         name : "Gudruc",
+        stats: {
+            body : 70,
+            mind : 45,
+            charisma : 55
+        },
         element : CharacterElement.WOOD,
         level: 7,
         user : {
@@ -81,7 +85,12 @@ export const CHARACTERS_LIST : Character[] = [
             current : 9,
             max : 10
         },
-        items : [],
+        items : [
+            {name: "tommate", id: "1234"},
+            {name: "caquasquette", id: "684684"},
+            {name: "sac", id: "68687"},
+            {name: "torche", id: "554545"}
+        ],
         skills : [],
         party : {
             id : "",
@@ -91,6 +100,11 @@ export const CHARACTERS_LIST : Character[] = [
     {
         id : "1236316800218895",
         name : "Alex Zabel",
+        stats: {
+            body : 70,
+            mind : 30,
+            charisma : 70
+        },
         element : CharacterElement.FIRE,
         level: 1,
         user : {

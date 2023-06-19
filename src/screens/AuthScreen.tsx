@@ -1,4 +1,4 @@
-import { Image, StyleSheet, View } from "react-native";
+    import { Image, StyleSheet, View } from "react-native";
 import { Button } from "react-native-paper";
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";

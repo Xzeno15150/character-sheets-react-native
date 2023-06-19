@@ -13,11 +13,12 @@ export default function CharacterItem(props : CharacterItemProps) {
     const { colors } = useTheme();
     const styles = makeStyle(colors);
     return (
-        <List.Item key={character.id} 
+        <List.Item key={character.id}
                     title={<CharacterItemTitle {...props}/>}
                     description={<UsernameText username={character.user.username}/>}
                     style={styles.item}
-                    left={()=><Image style={styles.image} source={require("../../assets/default-character.png")}/>}/>
+                    left={()=><Image style={styles.image} source={require("../../assets/default-character.png")}
+                    />}/>
     )
 }
 
