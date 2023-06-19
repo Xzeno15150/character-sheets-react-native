@@ -1,7 +1,8 @@
 import HTTPMethod from "./HTTTPMethod";
 import { getItem } from "./asyncStorageAcess";
 
-export function createRequest(url: string, method: HTTPMethod, body: JSON, headers: Headers): Request {
+export function createRequest(url: string, method: HTTPMethod, body: {}, headers?: Headers): Request {
+    headers ??= new Headers;
     headers.append('Content-Type', 'application/json')
 
     return new Request(process.env.BACK_URL + url, {
@@ -11,7 +12,7 @@ export function createRequest(url: string, method: HTTPMethod, body: JSON, heade
     })
 }
 
-export default function createRequestWithStoredJWT(url: string, method: HTTPMethod, body: JSON): Request | undefined {
+export default function createRequestWithStoredJWT(url: string, method: HTTPMethod, body: {}): Request | undefined {
     // @ts-ignore
     let request = undefined;
 

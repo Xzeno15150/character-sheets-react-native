@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { Button,TextInput, useTheme } from "react-native-paper";
 import { useDispatch } from 'react-redux'
-import { setLoggedIn } from "../redux/actions/AuthActions";
+import { connectUser, setLoggedIn } from "../redux/actions/AuthActions";
 
 export default function LoginForm() {
     
@@ -13,12 +13,9 @@ export default function LoginForm() {
     const dispatch = useDispatch();
 
     const handleLogin = () => {
-        const user = {
-            isLoggedIn : true,
-            email : email
-        };
-        //@ts-ignore
-        dispatch(setLoggedIn(user));
+        // @ts-ignore
+        const loginUser = () => dispatch(connectUser({ email : email}));
+        loginUser();
     }
 
     return (

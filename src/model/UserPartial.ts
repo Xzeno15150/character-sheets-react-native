@@ -1,4 +1,4 @@
 export type UserPartial = {
-    username: string,
+    username?: string,
     email: string,
 }
