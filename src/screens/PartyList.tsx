@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectParties } from "../redux/selectors/PartySelectors";
 import PartyListItem from "../components/PartyListItem";
 import { useEffect } from "react";
-import { getPartyList } from "../redux/actions/PartyActions";
+import {    getPartyList } from "../redux/actions/PartyActions";
 import { Party } from "../model/Party";
 import { UserPartial } from "../model/UserPartial";
 import { selectUser } from "../redux/selectors/AuthSelectors";
