@@ -7,8 +7,8 @@ export const PARTIES_LIST : Party[]= [
         id : "1231316880218895",
         name : "Le groupe des trop cools", 
         owner : {
-            username : "Xzeno",  
-            email : "toto@tutu.fr",
+            username : "Admin",  
+            email : "admin@admins.com",
         },
         characters : [
             {
@@ -17,8 +17,8 @@ export const PARTIES_LIST : Party[]= [
                 element : CharacterElement.WOOD,
                 level: 7,
                 user : {
-                    email : "taefub@qfoufq.fr",
-                    username : "OBQFOIUQSFSo",
+                    email : "user1@users.com",
+                    username : "Érina",
                 }
             },
             {
@@ -27,7 +27,7 @@ export const PARTIES_LIST : Party[]= [
                 element : CharacterElement.FIRE,
                 level: 1,
                 user : {
-                    email : "qsougf@qsfiug.fr",
+                    email : "user2@users.com",
                     username : "Neichan",
                 }
             },
@@ -37,28 +37,28 @@ export const PARTIES_LIST : Party[]= [
         id : "1231316863218895",
         name : "Le groupe des trops swagg", 
         owner : {
-            username : "Erina",  
-            email : "qeofub@qsifub.fr",
+            username : "Érina",  
+            email : "user1@users.com",
         },
         characters : [
             {
-                id : "12qepf6800218895",
-                name : "ZKJDIHAOIZHR",
-                element : CharacterElement.GROUND,
-                level: 7,
-                user : {
-                    email : "Sqfjb@qfoufq.fr",
-                    username : "UQJBSFOIN",
-                }
-            },
-            {
                 id : "120987678GBKd895",
-                name : "TYUikjnd,",
+                name : "Jean Neymar",
                 element : CharacterElement.WIND,
                 level: 1,
                 user : {
-                    email : "qsougf@qsfiug.fr",
-                    username : "Neichan",
+                    email : "user2@users.com",
+                    username : "Neitah",
+                }
+            },
+            {
+                id : "OIOQI98YA934",
+                name : "Truc Bidule",
+                element : CharacterElement.FIRE,
+                level: 99,
+                user : {
+                    username : "Admin",  
+                    email : "admin@admins.com",
                 }
             },
         ],
@@ -108,8 +108,8 @@ export const CHARACTERS_LIST : Character[] = [
         element : CharacterElement.FIRE,
         level: 1,
         user : {
-            email : "taefub@qfoufq.fr",
-            username : "OBQFOIUQSFSo",
+            email : "user2@users.com",
+            username : "Neichan",
         },
         imagePath : "",
         healthPoint : {
