@@ -11,26 +11,10 @@ type AuthScreenProps = {
 }
 
 export default function AuthScreen(props: AuthScreenProps) {
-    const errorMessage = useSelector(selectLoginErrorMessage)
-
     return (
         <View style={styles.container}>
             <Image source={require("../../assets/logo-game-taverne-bar.png")} style={styles.logo} />
-            {props.isRegister ?
-                (
-                    <RegisterForm />
-                )
-                : (
-                    
-                    <>
-                        <LoginForm />
-                        {errorMessage ? undefined : (<Text>errorMessage</Text>)}
-                        <Button onPress={() => props.navigation.navigate("Register")}>
-                            Still not registered ?
-                        </Button>
-                    </>
-                )
-            }
+            <LoginForm />
         </View>
     )
 }
@@ -42,7 +26,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     logo: {
-        width: undefined, 
+        width: undefined,
         height: "30%",
         aspectRatio: 1
     }

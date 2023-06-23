@@ -10,6 +10,7 @@ export function connectUser(user : UserPartial){
     // @ts-ignore
     return async dispatch => {
         const request : Request = createRequest("/login", HTTPMethod.POST, user);
+        console.log(request);
         fetch(request)
         .then(response => {
             if (response.status === 401) {
@@ -30,7 +31,7 @@ export function connectUser(user : UserPartial){
             }
             dispatch(setLoggedIn(user))
         })
-        .catch(error => dispatch(setLoginErrorMessage(error.message)));
+        .catch(error => {console.log(error);dispatch(setLoginErrorMessage(error.message))});
     }
 }
 
