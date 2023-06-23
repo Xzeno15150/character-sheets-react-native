@@ -10,15 +10,13 @@ export function connectUser(user : UserPartial){
     // @ts-ignore
     return async dispatch => {
         const request : Request = createRequest("/login", HTTPMethod.POST, user);
-        console.log(request);
+        
         fetch(request)
         .then(response => {
             if (response.status === 401) {
-                dispatch(setLoginErrorMessage("Invalid Credentials"))
-                return;
+                throw new Error("Email ou mot de passe incorrect");
             }
             return response.json();
-            
         })
         .then(jwt => {
             const token = jwt.token;
@@ -31,7 +29,7 @@ export function connectUser(user : UserPartial){
             }
             dispatch(setLoggedIn(user))
         })
-        .catch(error => {console.log(error);dispatch(setLoginErrorMessage(error.message))});
+        .catch(error => dispatch(setLoginErrorMessage(error.message)));
     }
 }
 
