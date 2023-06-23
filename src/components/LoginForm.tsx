@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import { Button,TextInput, useTheme } from "react-native-paper";
-import { useDispatch } from 'react-redux'
-import { setLoggedIn } from "../redux/actions/AuthActions";
+import { Button,Text,TextInput, useTheme } from "react-native-paper";
+import { useDispatch, useSelector } from 'react-redux'
+import { connectUser, setLoggedIn } from "../redux/actions/AuthActions";
+import { selectLoginErrorMessage } from "../redux/selectors/AuthSelectors";
+import { red100 } from "react-native-paper/src/styles/themes/v2/colors";
 
 export default function LoginForm() {
-    
+    const { colors } = useTheme();
+    const errorMessage = useSelector(selectLoginErrorMessage)
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,21 +16,22 @@ export default function LoginForm() {
     const dispatch = useDispatch();
 
     const handleLogin = () => {
-        const user = {
-            isLoggedIn : true,
-            email : email
-        };
-        //@ts-ignore
-        dispatch(setLoggedIn(user));
+        // @ts-ignore
+        const loginUser = () => dispatch(connectUser({ email : email, password: password}));
+        loginUser();
     }
+
+    const styles = makeStyles(colors);
 
     return (
         <View style={styles.container}>
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
             <TextInput onChangeText={setEmail}
                 value={email}
                 style={styles.textInput} 
                 label="Email" 
-                mode="outlined"/>
+                mode="outlined"
+                keyboardType="email-address"/>
             <TextInput onChangeText={setPassword}
                 value={password}
                 style={styles.textInput} 
@@ -46,7 +50,8 @@ export default function LoginForm() {
     )
 }
 
-const styles = StyleSheet.create({
+//@ts-ignore
+const makeStyles = (colors) => StyleSheet.create({
     container : {
         width: "60%",
         height: "50%",
@@ -61,5 +66,8 @@ const styles = StyleSheet.create({
     submitButton: {
         marginTop: "5%",
     },
+    errorMessage: {
+        color: colors.error,
+    }
 })
 

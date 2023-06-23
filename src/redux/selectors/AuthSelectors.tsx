@@ -7,3 +7,5 @@ export const selectUser = (state) => {
         email: state.userAuth.email
     }
 }
+// @ts-ignore
+export const selectLoginErrorMessage = (state) => state.userAuth.errorMessage;
