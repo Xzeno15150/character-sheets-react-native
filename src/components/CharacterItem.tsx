@@ -3,28 +3,40 @@ import CharacterItemTitle from "./CharacterItemTitle"
 import UsernameText from "./UsernameText"
 import { CharacterPartial } from "../model/CharacterPartial"
 import { Image, StyleSheet } from "react-native"
+import { useNavigation } from "@react-navigation/native"
 
 type CharacterItemProps = {
-    character : CharacterPartial,
+    character: CharacterPartial,
+    touchable?: boolean
 }
 
-export default function CharacterItem(props : CharacterItemProps) {
+export default function CharacterItem(props: CharacterItemProps) {
     const character = props.character;
+    const touchable = props.touchable;
     const { colors } = useTheme();
     const styles = makeStyle(colors);
+    const navigation = useNavigation();
     return (
-        <List.Item key={character.id}
-                    title={<CharacterItemTitle {...props}/>}
-                    description={<UsernameText username={character.user.username}/>}
-                    style={styles.item}
-                    left={()=><Image style={styles.image} source={require("../../assets/default-character.png")}
-                    />}/>
+        <List.Item
+            key={character.id}
+            title={<CharacterItemTitle {...props} />}
+            description={<UsernameText username={character.user.username} />}
+            style={styles.item}
+            left={()=> <Image style={styles.image} source={require("../../assets/default-character.png")}/>}
+            right={touchable ? props => <List.Icon {...props} icon="chevron-right"/> : undefined}
+            onPress={()=>
+                // @ts-ignore
+                navigation.navigate("CharacterDetail", { character: character})}
+            disabled={!touchable}
+            />
     )
 }
 
-const  makeStyle = (colors : any) => StyleSheet.create({
+//@ts-ignore
+const makeStyle = (colors) => StyleSheet.create({
     item: {
         marginLeft: 10,
+        paddingLeft: 5,
         backgroundColor: colors.background,
         borderRadius: 5,
         margin: 5
